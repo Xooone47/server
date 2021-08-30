@@ -1,0 +1,25 @@
+{
+  "name": "server-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "deploy": "pm2 start src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xooone47/server.git"
+  },
+  "author": "Deland",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Xooone47/server/issues"
+  },
+  "homepage": "https://github.com/Xooone47/server#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pm2": "^5.1.1"
+  }
+}
