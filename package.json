@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/index.js",
-    "deploy": "pm2 start src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "pm2 start src/index.js -n server-template --no-daemon",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:image": "docker build -t server-template:latest .",
+    "run:image": "docker run -p 8047:8047 server-template:latest"
   },
   "repository": {
     "type": "git",
@@ -19,7 +21,6 @@
   },
   "homepage": "https://github.com/Xooone47/server#readme",
   "dependencies": {
-    "express": "^4.17.1",
-    "pm2": "^5.1.1"
+    "express": "^4.17.1"
   }
 }
