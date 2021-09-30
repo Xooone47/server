@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "lib": ["es2019", "es2020.promise", "es2020.bigint", "es2020.string"],
+    "module": "commonjs",
+    "target": "es2019",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist",
+    "allowJs": true,
+    "noImplicitAny": false,
+    "noImplicitReturns": false,
+    "resolveJsonModule": true,
+    "baseUrl": ".",                       /* Base directory to resolve non-absolute module names. */
+    "paths": {                            /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
+      "@/*": ["src/*"],
+    },
+  },
+  "ts-node": {
+    "require": ["tsconfig-paths/register"],  /* use alias */
+  },
+  "include": [
+    "src",
+  ],
+  "exclude": [
+    "node_modules",
+  ],
+}

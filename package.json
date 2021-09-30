@@ -4,11 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js",
-    "deploy": "pm2 start src/index.js -n server-template --no-daemon",
+    "start": "nodemon src/index.ts",
+    "build": "tsc",
+    "serve": "node -r ts-node/register/transpile-only -r tsconfig-paths/register dist/index.js",
+    "deploy": "pm2 start ts-node src/index.ts -n server-template --no-daemon",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:image": "docker build -t server-template:latest .",
-    "run:image": "docker run -p 8047:8047 server-template:latest"
+    "run:image": "docker run -p 8047:8047 server-template:latest",
+    "lint": "eslint --ext .ts,.js src"
   },
   "repository": {
     "type": "git",
@@ -21,6 +24,19 @@
   },
   "homepage": "https://github.com/Xooone47/server#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "eslint": "^7.32.0",
+    "express": "^4.17.1",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.175",
+    "@types/node": "^16.10.2",
+    "@typescript-eslint/eslint-plugin": "^4.32.0",
+    "@typescript-eslint/parser": "^4.32.0",
+    "nodemon": "^2.0.13",
+    "ts-node": "^10.2.1",
+    "tsconfig-paths": "^3.11.0",
+    "tslib": "^2.3.1",
+    "typescript": "^4.4.3"
   }
 }
