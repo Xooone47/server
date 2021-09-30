@@ -1,0 +1,8 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+npx tsc
+echo "Pass Typescript check"
+
+yarn lint
+echo "Pass ESLint check"
