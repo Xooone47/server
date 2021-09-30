@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const port = 8047;
-const {noop, time} = require('@/utils');
+const {time} = require('@/utils');
 
 time();
 
