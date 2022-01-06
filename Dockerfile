@@ -28,5 +28,8 @@ COPY --from=install $SERVER_PATH/node_modules ./node_modules
 # 把当前目录下的所有文件拷贝到镜像的工作目录
 COPY . .
 
+RUN yarn build
+
 # 镜像运行后执行的node服务启动命令
-CMD ["pm2", "start", "src/index.js", "--no-daemon"]
+# CMD ["pm2", "start", "src/index.js", "--no-daemon"]
+CMD ["node", "-r", "ts-node/register/transpile-only", "-r", "tsconfig-paths/register", "dist/index.js"]
